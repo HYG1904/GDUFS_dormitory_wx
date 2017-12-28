@@ -5,12 +5,28 @@
     "pages/dormitory/dormitory",
     "pages/student_detail/student_detail",
     "pages/dormitory_buiding/dormitory_building",
-    "pages/dormitory_floor/dormitory_floor"
+    "pages/dormitory_floor/dormitory_floor",
+    "pages/dormitory_room/dormitory_room"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "广外大宿舍管理系统",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "black",
+    "selectedColor": "#3080EE",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/student/student",
+        "text": "学生信息"
+      },
+      {
+        "pagePath": "pages/dormitory/dormitory",
+        "text": "宿舍信息"
+      }
+    ]
   }
 }
