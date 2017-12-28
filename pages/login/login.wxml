@@ -1,2 +1,27 @@
 <!--pages/login/login.wxml-->
-<text>pages/login/login.wxml</text>
+<text>广外学生宿舍信息管理系统</text>
+<form>
+  <view class='username-input'>
+    <label for="username">
+      账号
+      <input id="username"></input>
+    </label>
+  </view>
+  <view class='password-input'>
+    <label for="password">
+      密码
+      <input id="password" password='true'></input>
+    </label>
+  </view>
+  <view class='remeber-btn'>
+    <checkbox-group bindchange="checkboxChange">
+      <label class="checkbox">
+        <checkbox value="remeberusername"/>记住账号
+      </label>
+      <label class="checkbox">
+        <checkbox value="remeberpassword"/>记住密码
+      </label>
+    </checkbox-group>
+  </view>
+  <button class='login-btn'>登录</button>
+</form>
