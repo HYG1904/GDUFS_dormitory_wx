@@ -1,0 +1,16 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/student/student",
+    "pages/dormitory/dormitory",
+    "pages/student_detail/student_detail",
+    "pages/dormitory_buiding/dormitory_building",
+    "pages/dormitory_floor/dormitory_floor"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  }
+}
