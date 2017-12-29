@@ -5,7 +5,38 @@ Page({
    * 页面的初始数据
    */
   data: {
+<<<<<<< dev
   
+=======
+    isRememberPassword:false,
+    isRememberUsername:false
+  },
+  rememberUsernameHandler:function(e){
+    if(e.detail.value.length===1){
+      // this.data.isRememberPassword = true;
+      this.setData({
+        isRememberUsername:true
+      })
+    }else{
+      this.data.isRememberPassword = false;
+      this.setData({
+        isRememberUsername: false
+      })
+    }
+    // console.log(this.data.isRememberPassword)
+  },
+  rememberPasswordHandler:function(e){
+    if (e.detail.value.length === 1) {
+      this.setData({
+        isRememberPassword: true
+      })
+    }else{
+      this.setData({
+        isRememberPassword: false
+      })
+    }
+    // console.log(this.data.isRememberPassword)
+>>>>>>> local
   },
 
   /**
