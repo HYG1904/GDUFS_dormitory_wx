@@ -1,2 +1,27 @@
 <!--pages/student/student.wxml-->
-<text>pages/student/student.wxml</text>
+<view class='searchbox-wrapper'>
+    <image src='../../img/searchicon.png' mode="aspectFit"></image>
+    <text>搜索</text>
+  <input></input>
+</view>
+<view class='selector-wrapper'>
+  <image src='../../img/downarrow.png'></image>
+  <picker value="{{collegeindex}}" range="{{college}}">
+    <text>{{college[collegeindex]}}</text>
+  </picker>
+</view>
+<view class='student-list'>
+  <navigator url="/pages/student_detail/student_detail" wx:for='{{studentData}}'>
+    <view class='student'>
+      <view class="left">
+        <view class='name'>{{item.name}}</view>
+        <view class='id'>{{item.id}}</view>
+      </view>
+      <view class="right">
+        <view class='college'>{{item.collage}}</view>
+        <view class='major'>{{item.major}}</view>
+      </view>
+    </view>
+  </navigator>
+  
+</view>

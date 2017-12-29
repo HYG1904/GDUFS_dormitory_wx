@@ -1,1 +1,98 @@
 /* pages/student/student.wxss */
+.searchbox-wrapper{
+  position: relative;
+  width:90%; 
+  height:56rpx;
+  background: #EEEEEE;
+  margin:50rpx auto;
+  border-radius: 8rpx;
+  line-height: 50rpx;
+  text-align: center;
+  
+}
+.searchbox-wrapper text{
+  font-size: 28rpx;
+  color:#999999;
+  margin-left: 16rpx;
+}
+.searchbox-wrapper image{
+  width: 28rpx;
+  height: 28rpx;
+  vertical-align: middle
+}
+.searchbox-wrapper input{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  font-size: 28rpx;
+}
+.selector-wrapper{
+  position: relative;
+  width: 90%;
+  height: 80rpx;
+  margin:auto;
+  border-radius: 8rpx;
+  background: #3080EE;
+  line-height: 80rpx;
+  text-align: center;
+  box-shadow: 0px 0px 10rpx #3080EE;
+}
+.selector-wrapper picker{
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  z-index:5;
+}
+.selector-wrapper image{
+  position: absolute;
+  width:34rpx;
+  height: 18rpx;
+  right: 0px;
+  margin: 32rpx 16rpx;
+}
+.selector-wrapper text{
+  font-size: 32rpx;
+  color:#fff;
+  margin-left: 16rpx;
+}
+
+.student-list{
+  width:90%;
+  margin:20rpx auto;
+  /* margin-top: 20rpx; */
+}
+.student{
+  height: 164rpx;
+  border-bottom: 2rpx solid #efefef;
+}
+.student .left{
+  margin-top: 34rpx;
+  float: left;
+}
+.student .right{
+  margin-top: 34rpx;
+  float: right
+}
+.name{
+  color:#3080EE;
+  font-size:40rpx;
+}
+.id{
+  color:#333333;
+  font-size:28rpx;
+}
+.college{
+  height: 46rpx;
+  line-height: 46rpx;
+  color:#333333;
+  font-size:28rpx;   
+}
+.major{
+  height: 46rpx;
+  line-height: 46rpx;
+  color:#333333;
+  font-size: 28rpx;  
+}
