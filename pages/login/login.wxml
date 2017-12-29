@@ -1,27 +1,32 @@
 <!--pages/login/login.wxml-->
-<text>广外学生宿舍信息管理系统</text>
+<text class='title'>广外学生宿舍信息管理系统</text>
 <form>
-  <view class='username-input'>
-    <label for="username">
-      账号
-      <input id="username"></input>
-    </label>
+  <view class='username-input input-box'>
+    <label for="username" class='login-label'>账号</label>
+    <input id="username" class='login-input'></input>
   </view>
-  <view class='password-input'>
-    <label for="password">
-      密码
-      <input id="password" password='true'></input>
-    </label>
+  <view class='password-input input-box'>
+    <label for="password" class='login-label'>密码</label>
+    <input id="password" password='true' class='login-input'></input>
   </view>
   <view class='remeber-btn'>
-    <checkbox-group bindchange="checkboxChange">
-      <label class="checkbox">
-        <checkbox value="remeberusername"/>记住账号
-      </label>
-      <label class="checkbox">
-        <checkbox value="remeberpassword"/>记住密码
-      </label>
+    <checkbox-group bindchange="rememberUsernameHandler" class='{{isRememberUsername ? "checkbox-wrapper checked" : "checkbox-wrapper"}}'>
+      <text class='login-checkbox'>
+        <text class='login-checkbox-inner'></text>
+      </text>
+      <checkbox value="remeberusername" id='rid'/>
+      <label class="checkbox" for='rid' class='login-label-2'>记住账号</label>
+    </checkbox-group>
+    <checkbox-group bindchange="rememberPasswordHandler" class='checkbox-wrapper checked'>
+      <text class='login-checkbox'>
+        <text class='login-checkbox-inner'></text>
+      </text>
+      <checkbox value="remeberpassword" id='rpwd'/>
+      <label class="checkbox" for='rpwd' class='login-label-2'>记住密码</label>
     </checkbox-group>
   </view>
   <button class='login-btn'>登录</button>
 </form>
+
+
+

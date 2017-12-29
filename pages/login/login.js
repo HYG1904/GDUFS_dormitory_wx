@@ -5,9 +5,31 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    isRememberPassword:false,
+    isRememberUsername:true
   },
-
+  rememberUsernameHandler:function(e){
+    if(e.detail.value.length===1){
+      // this.data.isRememberPassword = true;
+      this.setData({
+        isRememberPassword:true
+      })
+    }else{
+      this.data.isRememberPassword = false;
+      this.setData({
+        isRememberPassword: false
+      })
+    }
+    console.log(this.data.isRememberPassword)
+  },
+  rememberPasswordHandler:function(e){
+    if (e.detail.value.length === 1) {
+      this.data.isRememberUsername=true;
+    }else{
+      this.data.isRememberUsername = true;
+    }
+    console.log(this.data.isRememberPassword)
+  },
   /**
    * 生命周期函数--监听页面加载
    */
