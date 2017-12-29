@@ -6,27 +6,31 @@ Page({
    */
   data: {
     isRememberPassword:false,
-    isRememberUsername:true
+    isRememberUsername:false
   },
   rememberUsernameHandler:function(e){
     if(e.detail.value.length===1){
       // this.data.isRememberPassword = true;
       this.setData({
-        isRememberPassword:true
+        isRememberUsername:true
       })
     }else{
       this.data.isRememberPassword = false;
       this.setData({
-        isRememberPassword: false
+        isRememberUsername: false
       })
     }
     console.log(this.data.isRememberPassword)
   },
   rememberPasswordHandler:function(e){
     if (e.detail.value.length === 1) {
-      this.data.isRememberUsername=true;
+      this.setData({
+        isRememberPassword: true
+      })
     }else{
-      this.data.isRememberUsername = true;
+      this.setData({
+        isRememberPassword: false
+      })
     }
     console.log(this.data.isRememberPassword)
   },

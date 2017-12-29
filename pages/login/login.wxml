@@ -17,7 +17,7 @@
       <checkbox value="remeberusername" id='rid'/>
       <label class="checkbox" for='rid' class='login-label-2'>记住账号</label>
     </checkbox-group>
-    <checkbox-group bindchange="rememberPasswordHandler" class='checkbox-wrapper checked'>
+    <checkbox-group bindchange="rememberPasswordHandler" class='{{isRememberPassword ? "checkbox-wrapper checked" : "checkbox-wrapper"}}'>
       <text class='login-checkbox'>
         <text class='login-checkbox-inner'></text>
       </text>
