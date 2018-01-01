@@ -4,12 +4,14 @@
 </view>
 <view class='main'>
   <view wx:for="{{building}}" wx:for-item='area' wx:for-index='key'>
-   <view class='areatitle'>
-    <text>{{areamap[key]}}</text>
-   </view>
-     <view wx:for='{{area}}' wx:for-item='build'>
-       <text class='building'>{{build.builingname}}栋</text>
-      <text class='bedcount'>{{build.bed}}</text> 
-    </view> 
+    <view class='areatitle'>
+      <text>{{areamap[key]}}</text>
+    </view>
+    <view class='areamain'>
+      <view wx:for='{{area}}' wx:for-item='build' class='building'>
+        <text class='building' class='buildname'>{{build.builingname}}栋</text>
+        <text class='bedcount' class='bedcount'>{{build.bed}}空床位</text> 
+      </view>
+    </view>
   </view>
 </view>
