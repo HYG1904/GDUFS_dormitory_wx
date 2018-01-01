@@ -1,2 +1,15 @@
 <!--pages/dormitory/dormitory.wxml-->
-<text>pages/dormitory/dormitory.wxml</text>
+<view class="title">
+ <text>南校宿舍信息总览</text>
+</view>
+<view class='main'>
+  <view wx:for="{{building}}" wx:for-item='area' wx:for-index='key'>
+   <view class='areatitle'>
+    <text>{{areamap[key]}}</text>
+   </view>
+     <view wx:for='{{area}}' wx:for-item='build'>
+       <text class='building'>{{build.builingname}}栋</text>
+      <text class='bedcount'>{{build.bed}}</text> 
+    </view> 
+  </view>
+</view>
