@@ -6,36 +6,46 @@
   font-size: 48rpx;
 }
 .main{
-  margin-left: 32rpx;
-  margin-right: 32rpx;
-   overflow: auto; 
+  padding-left: 32rpx;
+  padding-right: 32rpx; 
+  padding-bottom: 7rpx;
+  overflow: auto; 
 }
- .areatitle {
+.areatitle {
   text-align: center;
   font-size: 40rpx;
-  margin-top: 45rpx;
+  margin-top: 40rpx;
   color:#B6B6B6;
   margin-bottom: 25rpx;
- }
- .areamain{
-   box-shadow: 0px 0px 4px #3080EE;
- }
- .building{
-  flex: 1;
-  width:172rpx;
+}
+.areamain{
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: 0rpx 0rpx 18rpx 0rpx rgba(48,128,238,0.3);
+  border-radius: 8rpx; 
+}
+.building{
+  flex-direction:column ;
+  width:25%;
   height: 120rpx;
- }
- .buildname{
+  border-radius: 8rpx;
+  display: flex;
+  justify-content:center 
+}
+.building-active{
+  background: #3080EE;
+}
+.building-active .buildname,.building-active .bedcount{
+  color:#fff;
+}
+.buildname{
   text-align: center;
-  display: inline-block;
-  width:100%;
   color: #3080EE;
   font-size: 40rpx;
- }
- .bedcount{
-  text-align: center;
-  display: inline-block;
+}
+.bedcount{
+  text-align: center;   
   width:100%;
   color: #333333;
   font-size:28rpx;
- }
+}

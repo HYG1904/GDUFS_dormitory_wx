@@ -8,7 +8,7 @@
       <text>{{areamap[key]}}</text>
     </view>
     <view class='areamain'>
-      <view wx:for='{{area}}' wx:for-item='build' class='building'>
+      <view wx:for='{{area}}' wx:for-item='build' class='building' hover-class="building-active">
         <text class='building' class='buildname'>{{build.builingname}}栋</text>
         <text class='bedcount' class='bedcount'>{{build.bed}}空床位</text> 
       </view>
