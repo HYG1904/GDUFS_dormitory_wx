@@ -1,12 +1,12 @@
 {
   "pages": [
+    "pages/dormitory_floor/dormitory_floor",
     "pages/dormitory/dormitory",
     "pages/student/student",
     "pages/login/login",
-    
     "pages/student_detail/student_detail",
     "pages/dormitory_buiding/dormitory_building",
-    "pages/dormitory_floor/dormitory_floor",
+    
     "pages/dormitory_room/dormitory_room"
   ],
   "window": {
