@@ -1,1 +1,23 @@
 /* pages/dormitory_floor/dormitory_floor.wxss */
+.main{
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  padding-top: 8rpx;
+}
+.show-btn{
+   margin-bottom: 25rpx; 
+  margin-top: 40rpx;
+}
+.show-btn button{
+  color:#fff;
+  background: #3080EE;
+  height: 80rpx;
+  font-size: 32rpx;
+}
+.main-title{
+  text-align: center;
+  font-size: 40rpx;
+  margin-top: 30rpx;
+  color:#B6B6B6;
+  margin-bottom: 25rpx;
+}

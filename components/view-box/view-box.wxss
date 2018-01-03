@@ -1,0 +1,33 @@
+/* components/view-box/view-box.wxss */
+.view-box{
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: 0rpx 0rpx 18rpx 0rpx rgba(48,128,238,0.3);
+  border-radius: 8rpx; 
+  margin-bottom: 48rpx;
+}
+.main{
+  flex-direction:column ;
+  width:25%;
+  height: 120rpx;
+  border-radius: 8rpx;
+  display: flex;
+  justify-content:center 
+}
+.main-active{
+  background: #3080EE;
+}
+.main-active .bigtext,.building-active .smalltext{
+  color:#fff;
+}
+.bigtext{
+  text-align: center;
+  color: #3080EE;
+  font-size: 40rpx;
+}
+.smalltext{
+  text-align: center;   
+  width:100%;
+  color: #333333;
+  font-size:28rpx;
+}

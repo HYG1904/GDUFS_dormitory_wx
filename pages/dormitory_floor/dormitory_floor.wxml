@@ -1,2 +1,10 @@
 <!--pages/dormitory_floor/dormitory_floor.wxml-->
-<text>pages/dormitory_floor/dormitory_floor.wxml</text>
+<view class='main'>
+  <view class='show-btn'>
+    <button>仅显示有空床位宿舍</button>
+  </view>
+  <view class='main-title'>
+    <text>{{title}}</text>
+  </view>
+  <view-box wx:for='{{roomView}}' array="{{item}}"  textb="空床位"></view-box>
+</view>

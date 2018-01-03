@@ -5,7 +5,49 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    roomView: [
+      [
+        { room: "202", bedcount: "3" },
+        { room: "202", bedcount: "3" },
+        { room: "202", bedcount: "3" },
+        { room: "202", bedcount: "3" },
+        { room: "202", bedcount: "3" },
+        { room: "202", bedcount: "3" },
+        { room: "202", bedcount: "3" },
+        { room: "202", bedcount: "3" },
+      ],
+      [
+        { room: "202", bedcount: "3" },
+        { room: "202", bedcount: "3" },
+        { room: "202", bedcount: "3" },
+        { room: "202", bedcount: "3" },
+        { room: "202", bedcount: "3" },
+        { room: "202", bedcount: "3" },
+        { room: "202", bedcount: "3" },
+        { room: "202", bedcount: "3" },
+      ],
+      [
+        { room: "202", bedcount: "3" },
+        { room: "202", bedcount: "3" },
+        { room: "202", bedcount: "3" },
+        { room: "202", bedcount: "3" },
+        { room: "202", bedcount: "3" },
+        { room: "202", bedcount: "3" },
+        { room: "202", bedcount: "3" },
+        { room: "202", bedcount: "3" }
+      ]
+    ],
+    // room:[
+    //   { room: "202", bedcount: "3" },
+    //   { room: "202", bedcount: "3" },
+    //   { room: "202", bedcount: "3" },
+    //   { room: "202", bedcount: "3" },
+    //   { room: "202", bedcount: "3" },
+    //   { room: "202", bedcount: "3" },
+    //   { room: "202", bedcount: "3" },
+    //   { room: "202", bedcount: "3" },
+    // ],
+    title:"南苑13栋-2楼"
   },
 
   /**

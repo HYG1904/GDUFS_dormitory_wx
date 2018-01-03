@@ -1,1 +1,5 @@
-{}
+{
+  "usingComponents": {
+    "view-box": "../../components/view-box/view-box"
+  }
+}
