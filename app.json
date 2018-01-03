@@ -1,8 +1,9 @@
 {
   "pages": [
-    "pages/login/login",
-    "pages/student/student",
     "pages/dormitory/dormitory",
+    "pages/student/student",
+    "pages/login/login",
+    
     "pages/student_detail/student_detail",
     "pages/dormitory_buiding/dormitory_building",
     "pages/dormitory_floor/dormitory_floor",
@@ -21,11 +22,15 @@
     "list": [
       {
         "pagePath": "pages/student/student",
-        "text": "学生信息"
+        "text": "学生信息",
+        "iconPath":"img/barlogo_student.png",
+        "selectedIconPath":"img/barlogo_student_active.png"
       },
       {
         "pagePath": "pages/dormitory/dormitory",
-        "text": "宿舍信息"
+        "text": "宿舍信息",
+        "iconPath": "img/barlogo_dormitory.png",
+        "selectedIconPath": "img/barlogo_dormitory_active.png"
       }
     ]
   },
