@@ -1,0 +1,27 @@
+/* pages/dormitory_buiding/dormitory_building.wxss */
+.tabs{
+  display: flex;
+  box-shadow: 0rpx 0rpx 25rpx 0rpx rgba(48,128,238,0.3);
+}
+.tab-button{
+  flex: 1;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx; 
+  text-align: center;
+  
+}
+.tab-active{
+  color: #3080EE;
+  border-bottom: 2rpx solid #3080EE;  
+}
+.main{
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+.main-title{
+  text-align: center;
+  font-size: 40rpx;
+  margin-top: 30rpx;
+  color:#B6B6B6;
+  margin-bottom: 25rpx;
+} 

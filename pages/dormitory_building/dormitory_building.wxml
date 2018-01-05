@@ -1,0 +1,25 @@
+<!--pages/dormitory_buiding/dormitory_building.wxml-->
+<wxs src="./dormitory_building.wxs" module="tools" />
+
+<view class='tabs'>
+  <view class='{{tools.tabAnimate(currentTab,0)}}' bindtap='changeTab' data-index='0'>空床位</view>
+  <view class='{{tools.tabAnimate(currentTab,1)}}' bindtap='changeTab' data-index='1'>楼层信息</view>
+</view>
+<view class='main nullbed'>
+  <view class='main-nullbed' wx:if="{{currentTab == 0}}">
+    <view>
+      <view class='main-title'>
+        <text>{{buildingname}}</text>
+      </view>
+      <view-box wx:for='{{roomView}}' array="{{item}}"  textb="空床位"></view-box>
+    </view>
+  </view>
+  <view class='main-floorinformation' wx:if="{{currentTab == 1}}">
+    <view class='main-title'>
+      <text>{{buildingname}}</text>
+    </view>
+    <view class='floorinformation-main-wrapper'>
+      <view class='floorinformation-main'></view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,7 @@
+var tabAnimate = function(tab,thistab){
+  return tab == thistab ? "tab-button tab-active" : "tab-button";
+}
+
+module.exports = {
+  tabAnimate:tabAnimate
+}

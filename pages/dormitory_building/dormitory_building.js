@@ -5,14 +5,22 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
-  },
+    buildingname: "南苑13栋",
 
+    currentTab:"1"
+  },
+  changeTab:function(e){
+    var tab = e.target.dataset.index;
+    // console.log(tab);
+    this.setData({
+      currentTab:tab,
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+
   },
 
   /**
