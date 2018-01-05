@@ -8,7 +8,6 @@
   padding-top: 30rpx;
   padding-bottom: 30rpx; 
   text-align: center;
-  
 }
 .tab-active{
   color: #3080EE;
@@ -25,3 +24,34 @@
   color:#B6B6B6;
   margin-bottom: 25rpx;
 } 
+.floorinformation-main{
+  display: flex;
+  flex-direction:column;
+  justify-content:center;
+  width: 100%;
+  height: 120rpx;
+  margin-bottom: 32rpx;
+  border-radius: 8rpx;
+  box-shadow: 0rpx 0rpx 25rpx 0rpx rgba(48,128,238,0.3);
+}
+.floorinformation-main-active{
+  background: #3080EE;
+  color:#fff;
+}
+
+.floorinformation-main .floor{
+  text-align: center;
+  color:#3080EE;
+  font-size: 40rpx;
+}
+.floorinformation-main .bedcount{
+  text-align: center;
+  color:#333;
+  font-size: 28rpx;
+}
+.floorinformation-main-active .floor{
+  color:#fff;
+}
+.floorinformation-main-active .bedcount{
+  color:#fff;
+}

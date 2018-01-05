@@ -6,6 +6,45 @@ Page({
    */
   data: {
     buildingname: "南苑13栋",
+    roomView: [
+      [
+        { room: "202", bedcount: "3" },
+        { room: "202", bedcount: "3" },
+        { room: "202", bedcount: "3" },
+        { room: "202", bedcount: "3" },
+        { room: "202", bedcount: "3" },
+        { room: "202", bedcount: "3" },
+      ],
+      [
+        { room: "202", bedcount: "3" },
+        { room: "202", bedcount: "3" },
+        { room: "202", bedcount: "3" },
+        { room: "202", bedcount: "3" },
+        { room: "202", bedcount: "3" },
+        { room: "202", bedcount: "3" },
+        { room: "202", bedcount: "3" },
+        { room: "202", bedcount: "3" },
+      ],
+      [
+        { room: "202", bedcount: "3" },
+        { room: "202", bedcount: "3" },
+        { room: "202", bedcount: "3" },
+        { room: "202", bedcount: "3" },
+        { room: "202", bedcount: "3" },
+        { room: "202", bedcount: "3" },
+        { room: "202", bedcount: "3" },
+        { room: "202", bedcount: "3" }
+      ]
+    ],
+    floorinformation:[
+      { floor: 2, bedcount: 12 },
+      { floor: 3, bedcount: 13 },
+      { floor: 4, bedcount: 4 },
+      { floor: 5, bedcount: 12 },
+      { floor: 6, bedcount: 44 },
+      { floor: 7, bedcount: 14 },
+      { floor: 8, bedcount: 6 }
+    ],
 
     currentTab:"1"
   },
