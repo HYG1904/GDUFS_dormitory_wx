@@ -1,0 +1,7 @@
+var buttonClass = function (ismanage) {
+  return ismanage ? "active" : "";
+}
+
+module.exports = {
+  buttonClass: buttonClass,
+}

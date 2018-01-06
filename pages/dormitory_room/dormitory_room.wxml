@@ -10,11 +10,11 @@
       <view class='title'>
         <view class='left'>
           <view>
-            <text class='name'>莫广智</text>
+            <text class='name'>{{item.name}}</text>
           </view>
           <view>
-            <text class='sex'>男</text>
-            <text class='grade'>2015级</text>
+            <text class='sex'>{{item.sex}}</text>
+            <text class='grade'>{{item.grade}}级</text>
           </view>
         </view>
         <view class='right'>

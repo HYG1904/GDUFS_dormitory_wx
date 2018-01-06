@@ -1,1 +1,73 @@
-/* pages/student_detail/student_detail.wxss */
+/* pages/dormitory_room/dormitory_room.wxss */
+.room-title{
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  font-size: 48rpx;
+  color:#333;
+  margin-top: 50rpx;
+  margin-bottom: 2rpx;
+}
+.student{
+  background: #EEEEEE;
+}
+.box{
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  margin-bottom: 32rpx;
+  background: #fff;
+  overflow: auto;
+}
+.box .title{
+  margin-top: 48rpx;
+  margin-bottom: 15rpx;
+}
+.name{
+  font-size: 64rpx;
+  color:#3080EE;
+}
+.sex{
+  margin-right: 60rpx;
+}
+.sex, .grade{
+  font-size: 30rpx;
+  color:#333;
+}
+.box .title button{
+  color:#3080EE;
+  font-size: 32rpx;
+  width:240rpx;
+  height: 80rpx;
+  margin-top: 15rpx;
+  background: white;
+  box-shadow: 0rpx 0rpx 18rpx 0rpx rgba(48,128,238,0.3);
+}
+.box .title .active{
+  background: #3080EE;
+  color: #FFFFFF;
+}
+.box .title{
+  display: flex;
+}
+.box .title .right {
+  text-align: right;
+  flex: 1;
+}
+.box .title .left {
+  flex: 1;
+}
+.box .item{
+  height: 86rpx;
+  line-height: 86rpx;
+  padding-top: 20rpx;
+  border-bottom: 1rpx solid #EEEEEE;
+  font-size: 28rpx;
+  display: flex;
+}
+.box .item .key{
+  flex:1;
+}
+.box .item .value{
+  flex:2;
+  color:#3080EE;
+  text-align: right;
+}

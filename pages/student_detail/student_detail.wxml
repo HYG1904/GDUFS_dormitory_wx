@@ -1,2 +1,85 @@
 <!--pages/student_detail/student_detail.wxml-->
-<text>pages/student_detail/student_detail.wxml</text>
+<view class='detail-main'>
+  <view class='student'>
+    <view class='box'>
+      <view class='title'>
+        <view class='left'>
+          <view>
+            <text class='name'>{{detail.name}}</text>
+          </view>
+          <view>
+            <text class='sex'>{{detail.sex}}</text>
+            <text class='grade'>{{detail.grade}}级</text>
+          </view>
+        </view>
+        <view class='right'>
+          <button size='mini' class='{{tools.buttonClass(isEdit)}}'>编辑</button>
+        </view>
+      </view>
+      <view class='item'>
+        <text class='key'>学院</text>
+        <text class='value'>{{detail.college}}</text>
+      </view>
+      <view class='item'>
+        <text class='key'>学号</text>
+        <text class='value'>{{detail.id}}</text>
+      </view>
+      <view class='item'>
+        <text class='key'>专业</text>
+        <text class='value'>{{detail.major}}</text>
+      </view>
+      <view class='item'>
+        <text class='key'>班级</text>
+        <text class='value'>{{detail.classname}}</text>
+      </view>
+    </view>
+    <view class='box'>
+      <view class='item'>
+        <text class='key'>电话</text>
+        <text class='value'>{{detail.phonenumber}}</text>
+      </view>
+      <view class='item'>
+        <text class='key'>籍贯</text>
+        <text class='value'>{{detail.nativeplace}}</text>
+      </view>
+      <view class='item'>
+        <text class='key'>宿舍</text>
+        <text class='value'>{{detail.dormitory}}</text>
+      </view>
+    </view>
+    <view class='box'>
+      <view class='item'>
+        <text class='key'>第一联系人</text>
+        <text class='value'>{{detail.firstconnecter}}</text>
+      </view>
+      <view class='item'>
+        <text class='key'>联系人电话</text>
+        <text class='value'>{{detail.conneter_phone}}</text>
+      </view>
+    </view>
+
+    <view class='box'>
+      <view class='item'>
+        <text class='key'>辅导员</text>
+        <text class='value'>{{detail.counselor}}</text>
+      </view>
+      <view class='item'>
+        <text class='key'>辅导员工号</text>
+        <text class='value'>{{detail.counselor_id}}</text>
+      </view>
+    </view>
+
+    <view class='box'>
+      <view class='item'>
+        <text class='key'>是否为贫困生</text>
+        <text class='value'>{{detail.major}}</text>
+      </view>
+      <view class='item'>
+        <text class='key'>是否购买保险</text>
+        <text class='value'>{{detail.classname}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='records'></view>
+</view>
