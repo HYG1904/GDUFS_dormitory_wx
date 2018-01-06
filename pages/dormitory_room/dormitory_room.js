@@ -5,7 +5,52 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    students:[
+      {
+        isdormitory:true,
+        name:"莫广智",
+        sex:"男",
+        grade:"2015",
+        college:"信息科学与技术学院",
+        id:"20151002208",
+        phonenumber:"15602233126",
+        counselor:"谢石顺",
+        counselor_phonenumber:"13710042673"
+      },
+      {
+        isdormitory: false,
+        name: "莫广智",
+        sex: "男",
+        grade: "2015",
+        college: "信息科学与技术学院",
+        id: "20151002208",
+        phonenumber: "15602233126",
+        counselor: "谢石顺",
+        counselor_phonenumber: "13710042673"
+      },
+      {
+        isdormitory: false,
+        name: "莫广智",
+        sex: "男",
+        grade: "2015",
+        college: "信息科学与技术学院",
+        id: "20151002208",
+        phonenumber: "15602233126",
+        counselor: "谢石顺",
+        counselor_phonenumber: "13710042673"
+      },
+      {
+        isdormitory: false,
+        name: "莫广智",
+        sex: "男",
+        grade: "2015",
+        college: "信息科学与技术学院",
+        id: "20151002208",
+        phonenumber: "15602233126",
+        counselor: "谢石顺",
+        counselor_phonenumber: "13710042673"
+      }
+    ]
   },
 
   /**
