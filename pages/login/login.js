@@ -8,14 +8,29 @@ Page({
     username:"",
     password:"",
     session_id:"",
-    loginUrl:"",
+    loginUrl:"https://aoaotheone.cn/dormitory/index.php/Home/Wx/",
     isRememberPassword:false,
-    isRememberUsername:false
+    isRememberUsername:false,
+    users: wx.getStorageSync('users')
   },
   usernameInput:function(e){
     this.setData({
       username:e.detail.value
     })
+    // console.log(this.data.users[]); 
+    this.fillPassword(e.detail.value);
+  },
+  fillPassword:function(username){
+    if (this.data.users[username]) {
+      console.log(this.data.users[username])
+      this.setData({
+        password: this.data.users[username]
+      })
+    }else{
+      this.setData({
+        password: ""
+      })
+    }
   },
   passwordInput:function(e){
     this.setData({
@@ -23,12 +38,19 @@ Page({
     })
   },
   login:function(){
+    wx.showLoading({
+      mask:true,
+      title: '加载中',
+    })
     var that = this;
-
+    console.log(that.data.username + "  " + that.data.password);
     wx.request({
+      method:"post",
       url: that.data.loginUrl,
+      dataType:"json",
+      header:{'content-type':"application/json"},
       data:{
-        session_id:"",
+        // session_id:"",
         type:"A001",
         data:{
           username:that.data.username,
@@ -36,6 +58,16 @@ Page({
         },
       },
       success:function(res){
+        wx.hideLoading()
+        // 账号密码错误
+        if (res.data.code !== 1) {
+          wx.showModal({
+            title: '账号或密码错误',
+            content: "请重新输入账号密码"
+          })
+          return;
+        }
+
         // 请求出错
         if(res.data.code !== 1){
           console.log(res.data.code);
@@ -48,15 +80,34 @@ Page({
           wx.setStorageSync('id', res.data.msg.id);
           wx.setStorageSync('name', res.data.msg.name);
           wx.setStorageSync('identify', res.data.msg.identify);
+          // 记住账号
+          if (that.data.isRememberUsername) wx.setStorageSync('username', that.data.username);
+          // 记住密码
+          if (that.data.isRememberPassword) {
+            var users = wx.getStorageSync("users");
+            if(users){
+              users[that.data.username] = that.data.password;
+            }else{
+              // 第一次记住密码
+              users = {};
+              users[that.data.username] = that.data.password;
+            }
+            wx.setStorageSync('users', users);
+          };
         } catch (e) {
           console.log(e);
         }
         // 页面跳转
-        wx.navigateTo({
-          url: 'pages/student/student'
+        wx.switchTab({
+          url: '/pages/student/student'
         })
       },
       fail:function(res){
+        wx.hideLoading()
+        wx.showModal({
+          title: '网络异常',
+          content: "请稍后重试"
+        })
         console.log(res.errMsg);
       }
     })
@@ -68,11 +119,19 @@ Page({
       this.setData({
         isRememberUsername:true
       })
+
     }else{
       this.data.isRememberPassword = false;
       this.setData({
         isRememberUsername: false
       })
+
+      // 解除记住密码
+      try {
+        wx.setStorageSync('username', "");
+      } catch (e) {
+        console.log(e);
+      }
     }
     console.log(this.data.isRememberPassword)
   },
@@ -92,14 +151,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    var lastUsername = wx.getStorageSync('username');
+    if (lastUsername) {
+      this.setData({
+        username: lastUsername,
+        isRememberUsername:true
+      })
+    }
+
+    this.fillPassword(lastUsername);
   },
 
   /**

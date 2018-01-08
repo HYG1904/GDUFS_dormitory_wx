@@ -3,11 +3,11 @@
 <form>
   <view class='username-input input-box'>
     <label for="username" class='login-label'>账号</label>
-    <input id="username" class='login-input' bindinput='usernameInput'></input>
+    <input id="username" class='login-input' bindinput='usernameInput' value='{{username}}'></input>
   </view>
   <view class='password-input input-box'>
     <label for="password" class='login-label'>密码</label>
-    <input id="password" password='true' class='login-input' bindinput='passwordInput'></input>
+    <input id="password" password='true' class='login-input' bindinput='passwordInput' value='{{password}}'></input>
   </view>
   <view class='remeber-btn'>
     <checkbox-group bindchange="rememberUsernameHandler" class='{{isRememberUsername ? "checkbox-wrapper checked" : "checkbox-wrapper"}}'>
