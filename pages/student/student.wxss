@@ -88,11 +88,14 @@
   height: 46rpx;
   line-height: 46rpx;
   color:#333333;
-  font-size:28rpx;   
+  font-size:28rpx;
+  text-align: right; 
 }
 .major{
   height: 46rpx;
   line-height: 46rpx;
   color:#333333;
   font-size: 28rpx;  
+  text-align: right; 
+  
 }

@@ -1,12 +1,14 @@
 <!--pages/student/student.wxml-->
+<wxs src="./student.wxs" module="computed" />
+
 <view class='searchbox-wrapper'>
-    <image src='../../img/searchicon.png' mode="aspectFit"></image>
-    <text>搜索</text>
-  <input></input>
+  <image src='../../img/searchicon.png' mode="aspectFit" wx:if="{{computed.ifshowText(searchContent)}}"></image>
+  <text wx:if="{{computed.ifshowText(searchContent)}}">搜索</text>
+  <input value='{{searchContent}}' bindinput='searchBoxInput'></input> 
 </view>
 <view class='selector-wrapper'>
   <image src='../../img/downarrow.png'></image>
-  <picker value="{{collegeindex}}" range="{{college}}">
+  <picker value="{{collegeindex}}" range="{{college}}" bindchange="fetchData">
     <text>{{college[collegeindex]}}</text>
   </picker>
 </view>

@@ -40,7 +40,7 @@ Page({
   login:function(){
     wx.showLoading({
       mask:true,
-      title: '加载中',
+      title: '请稍后',
     })
     var that = this;
     console.log(that.data.username + "  " + that.data.password);
@@ -50,7 +50,6 @@ Page({
       dataType:"json",
       header:{'content-type':"application/json"},
       data:{
-        // session_id:"",
         type:"A001",
         data:{
           username:that.data.username,

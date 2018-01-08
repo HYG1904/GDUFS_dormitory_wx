@@ -1,0 +1,7 @@
+var ifshowText = function(value){
+  return value.length>0 ? false : true;
+}
+
+module.exports = {
+  ifshowText: ifshowText
+}
