@@ -9,10 +9,17 @@
   margin-top: 40rpx;
 }
 .show-btn button{
-  color:#fff;
-  background: #3080EE;
   height: 80rpx;
   font-size: 32rpx;
+}
+.show-btn .all{
+  color:#fff;
+  background: #3080EE;
+}
+.show-btn .null{
+  color:#3080EE;
+  background: #fff;
+  box-shadow: 0rpx 0rpx 18rpx 0rpx rgba(48,128,238,0.3);
 }
 .main-title{
   text-align: center;

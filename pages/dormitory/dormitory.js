@@ -156,7 +156,8 @@ Page({
     })
   },
   showbuildingDetial(e){
-    var building = e.currentTarget.dataset.building
+    var building = e.currentTarget.dataset.area+e.currentTarget.dataset.building+'栋';
+    // console.log(building);
     wx.navigateTo({
       url: '/pages/dormitory_building/dormitory_building?building='+building
     })

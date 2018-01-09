@@ -5,63 +5,177 @@ Page({
    * 页面的初始数据
    */
   data: {
-    building:undefined,
     buildingname: "南苑13栋",
-    roomView: [
-      [
-        { room: "202", bedcount: "3" },
-        { room: "202", bedcount: "3" },
-        { room: "202", bedcount: "3" },
-        { room: "202", bedcount: "3" },
-        { room: "202", bedcount: "3" },
-        { room: "202", bedcount: "3" },
-      ],
-      [
-        { room: "302", bedcount: "3" },
-        { room: "302", bedcount: "3" },
-        { room: "302", bedcount: "3" },
-        { room: "302", bedcount: "3" },
-        { room: "302", bedcount: "3" },
-        { room: "302", bedcount: "3" },
-        { room: "302", bedcount: "3" },
-        { room: "302", bedcount: "3" },
-      ],
-      [
-        { room: "402", bedcount: "3" },
-        { room: "402", bedcount: "3" },
-        { room: "402", bedcount: "3" },
-        { room: "402", bedcount: "3" },
-        { room: "402", bedcount: "3" },
-        { room: "402", bedcount: "3" },
-        { room: "402", bedcount: "3" },
-        { room: "402", bedcount: "3" }
-      ]
-    ],
-    floorinformation:[
-      { floor: 2, bedcount: 12 },
-      { floor: 3, bedcount: 13 },
-      { floor: 4, bedcount: 4 },
-      { floor: 5, bedcount: 12 },
-      { floor: 6, bedcount: 44 },
-      { floor: 7, bedcount: 14 },
-      { floor: 8, bedcount: 6 }
-    ],
+    session_id: wx.getStorageSync("session_id"),
+    url:"https://aoaotheone.cn/dormitory/index.php/Home/Wx/",
+    roomView: [],
+    floorinformation:[],
+    currentTab:"0"
+  },
+  fetchData2:function(){
+    var that = this;
+    // wx.showLoading({
+    //   mask: true,
+    //   title: '加载中',
+    // })
+    wx.request({
+      method: "post",
+      url: that.data.url,
+      dataType: "json",
+      header: { 'content-type': "application/json" },
+      data: {
+        session_id: that.data.session_id,
+        type: "A008",
+        data:{
+          building: that.data.buildingname
+        }
+      },
+      success: function (res) {
+        // wx.hideLoading()
+        //未登录
+        if (res.data.code == 5) {
+          wx.showModal({
+            title: '未登录',
+            content: '请先登陆',
+            success: function (res) {
+              wx.navigateTo({
+                url: '/pages/login/login'
+              })
+            }
+          })
+        }
 
-    currentTab:"1"
+        // 请求出错
+        if (res.data.code !== 1) {
+          console.log(res.data.msg);
+          return;
+        }
+
+        // 请求成功
+        var floorinformation = []
+        res.data.msg.forEach(function (item, index) {
+          floorinformation[index] = {};
+          floorinformation[index]['bedcount'] = item;
+          floorinformation[index]['floor'] = index + 1;
+        })
+        that.setData({
+          floorinformation:floorinformation
+        })
+        console.log(that.data.building);
+      },
+      fail: function (res) {
+        // wx.hideLoading()
+        wx.showModal({
+          title: '网络异常',
+          content: "请稍后重试"
+        })
+        console.log(res.errMsg);
+      }
+    })
+  },
+  fetchData1:function(){
+    var that = this;
+    wx.showLoading({
+      mask: true,
+      title: '加载中',
+    })
+    wx.request({
+      method: "post",
+      url: that.data.url,
+      dataType: "json",
+      header: { 'content-type': "application/json" },
+      data: {
+        session_id: that.data.session_id,
+        type: "A010",
+        data: {
+          building: that.data.buildingname
+        }
+      },
+      success: function (res) {
+        wx.hideLoading()
+        //未登录
+        if (res.data.code == 5) {
+          wx.showModal({
+            title: '未登录',
+            content: '请先登陆',
+            success: function (res) {
+              wx.navigateTo({
+                url: '/pages/login/login'
+              })
+            }
+          })
+        }
+
+        // 请求出错
+        if (res.data.code !== 1) {
+          console.log(res.data.msg);
+          return;
+        }
+
+        // 请求成功
+        var roomView = {};
+        for (var key in res.data.msg){
+          roomView[key] = [];
+          res.data.msg[key].forEach(function(item,index){
+            roomView[key][index] = {};
+            roomView[key][index]["bedcount"] = item['free_number'];
+            roomView[key][index]["room"] = item['room_number'];            
+          })
+        }
+
+        that.setData({
+          roomView: roomView
+        })
+        console.log(that.data.roomView);
+      },
+      fail: function (res) {
+        wx.hideLoading()
+        wx.showModal({
+          title: '网络异常',
+          content: "请稍后重试"
+        })
+        console.log(res.errMsg);
+      }
+    })
+  },
+  fetchDataStrategy: function (strategy){
+    switch (strategy) {
+      case 0:
+        return this.fetchData1;
+      case 1:
+        return this.fetchData2;
+    }
   },
   changeTab:function(e){
     var tab = e.target.dataset.index;
-    // console.log(tab);
     this.setData({
       currentTab:tab,
     })
+  },
+  showFloorDetail:function(e){
+    var floor = e.currentTarget.dataset.floor;
+    var buildingname = this.data.buildingname;
+    console.log(floor);
+    wx.navigateTo({
+      url: '/pages/dormitory_floor/dormitory_floor?building=' + buildingname + "&floor=" + floor
+    })
+  },
+  showDormitoryDetial:function(e){
+    
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.data.building = options.building;
-    console.log(this.data.building);
+    // 读取参数
+    this.setData({
+      buildingname: options.building
+    })
+    // this.data.buildingname = options.building;
+
+    //获取数据
+    this.fetchData1();
+    this.fetchData2();
   },
 
   /**

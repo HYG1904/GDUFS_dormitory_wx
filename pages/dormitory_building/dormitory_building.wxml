@@ -9,7 +9,7 @@
   <view class='main-nullbed' wx:if="{{currentTab == 0}}">
     <view wx:for='{{roomView}}'>
       <view class='main-title'>
-        <text>{{buildingname}}-{{index+1}}楼</text>
+        <text>{{buildingname}}-{{index}}楼</text>
       </view>
       <view-box array="{{item}}"  textb="空床位"></view-box>
     </view>
@@ -19,7 +19,11 @@
       <text>{{buildingname}}</text>
     </view>
     <view class='floorinformation-main-wrapper'>
-      <view class='floorinformation-main' hover-class='floorinformation-main-active' wx:for="{{floorinformation}}">
+      <view class='floorinformation-main' 
+      hover-class='floorinformation-main-active' 
+      wx:for="{{floorinformation}}"
+      bindtap='showFloorDetail'
+      data-floor="{{item.floor}}">
         <view class='floor'>{{item.floor}}楼</view>
         <view class='bedcount'>{{item.bedcount}}空床位</view>
       </view>

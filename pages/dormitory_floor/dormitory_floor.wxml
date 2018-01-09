@@ -1,10 +1,12 @@
 <!--pages/dormitory_floor/dormitory_floor.wxml-->
+<wxs src="./dormitory_floor.wxs" module="computed" />
+
 <view class='main'>
   <view class='show-btn'>
-    <button>仅显示有空床位宿舍</button>
+    <button bindtap='showNullRoom' class="{{computed.buttonClass(isshowNull)}}">仅显示有空床位宿舍</button>
   </view>
   <view class='main-title'>
-    <text>{{title}}</text>
+    <text>{{buildingname}}-{{floor}}楼</text>
   </view>
   <view-box wx:for='{{roomView}}' array="{{item}}"  textb="空床位"></view-box>
 </view>

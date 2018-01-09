@@ -1,0 +1,11 @@
+var buttonClass = function(x){
+  if(x){
+    return "null"
+  }else{
+    return "all"
+  }
+}
+
+module.exports = {
+  buttonClass: buttonClass
+}
