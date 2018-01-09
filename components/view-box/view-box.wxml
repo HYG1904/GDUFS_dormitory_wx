@@ -1,6 +1,11 @@
 <!--components/view-box/view-box.wxml-->
 <view class='view-box'>
-  <view wx:for='{{array}}' class='main' hover-class="main-active">
+  <view 
+  wx:for='{{array}}' 
+  class='main' 
+  hover-class="main-active"
+  bindtap='tagItem'
+  data-room='{{item.room}}'>
     <text class='bigtext'>{{item.room}}{{texta}}</text>
     <text class='smalltext'>{{item.bedcount}}{{textb}}</text> 
   </view>

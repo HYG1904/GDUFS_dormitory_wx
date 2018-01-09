@@ -11,7 +11,7 @@
       <view class='main-title'>
         <text>{{buildingname}}-{{index}}楼</text>
       </view>
-      <view-box array="{{item}}"  textb="空床位"></view-box>
+      <view-box array="{{item}}"  textb="空床位" bind:clickRoom="showDormitoryDetial"></view-box>
     </view>
   </view>
   <view class='main-floorinformation' wx:if="{{currentTab == 1}}">

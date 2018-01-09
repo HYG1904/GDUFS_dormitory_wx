@@ -124,6 +124,13 @@ Page({
     }
 
   },
+  showDormitoryDetial:function(e){
+    var building = this.data.buildingname;
+    var room = e.detail.room;
+    wx.navigateTo({
+      url: '/pages/dormitory_room/dormitory_room?building=' + building + "&room=" + room
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
