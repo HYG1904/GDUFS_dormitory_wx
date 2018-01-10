@@ -35,7 +35,7 @@
 .student .title button{
   color:#3080EE;
   font-size: 32rpx;
-  width:240rpx;
+  width:250rpx;
   height: 80rpx;
   margin-top: 15rpx;
   background: white;

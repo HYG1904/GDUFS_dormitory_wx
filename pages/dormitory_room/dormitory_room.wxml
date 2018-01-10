@@ -2,7 +2,7 @@
 <wxs src="./dormitory_room.wxs" module="tools" />
 
 <view class='room-title'>
-  <text>南苑13栋356</text>
+  <text>{{buildingname}}{{room}}</text>
 </view>
 <view class='room-main'>
   <view class='students'>
@@ -18,7 +18,10 @@
           </view>
         </view>
         <view class='right'>
-          <button size='mini' class='{{tools.buttonClass(item.isdormitory)}}'>{{tools.buttonText(item.isdormitory)}}</button>
+          <button size='mini' 
+          class='{{tools.buttonClass(item.is_dorm_manager)}}'
+          bindtap='changeManager
+          data-student_number="{{item.student_number}}">{{tools.buttonText(item.is_dorm_manager)}}</button>
         </view>
       </view>
       <view class='item'>
@@ -27,15 +30,15 @@
       </view>
       <view class='item'>
         <text class='key'>学号</text>
-        <text class='value'>{{item.id}}</text>
+        <text class='value'>{{item.student_number}}</text>
       </view>
       <view class='item'>
         <text class='key'>联系方式</text>
-        <text class='value'>{{item.phonenumber}}</text>
+        <text class='value'>{{item.phone}}</text>
       </view>
       <view class='item'>
         <text class='key'>辅导员</text>
-        <text class='value'>{{item.counselor}}</text>
+        <text class='value'>{{item.instructor}}</text>
       </view>
       <view class='item'>
         <text class='key'>辅导员电话</text>
