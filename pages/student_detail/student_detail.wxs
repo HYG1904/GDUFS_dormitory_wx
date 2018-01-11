@@ -1,7 +1,47 @@
-var buttonClass = function (ismanage) {
-  return ismanage ? "active" : "";
+var buttonClass = function (isEdit) {
+  return isEdit ? "active" : "";
+}
+
+var isTextarea = function(index){
+  return (index === "note" || index === "dorm") ? true : false;
+}
+
+var itemClass = function (index){
+  return (index === "note" || index === "dorm") ? "item column" : "item";
+}
+
+var isInput = function(index){
+  return (index === "note" || index === "dorm" || index === "is_poor" || index === "is_insurance" || index === "college" || index === "major" || index === "classname") ? false : true;
+}
+
+var isSelect = function(index){
+  return (index === "is_poor" || index === "is_insurance" || index === "college" || index === "major" || index === "classname") ? true : false;
+}
+
+var isEdit = function (isEdit){
+  return isEdit ? "student edit" : "student normal";
+}
+
+var isHaveInsurance = function(index){
+  return index === "is_insurance" ? true : false;
+}
+
+var isShowInsurance = function(value){
+  return value === "是" ? "" : "display:none;flex:1"
+}
+
+var pickerClass = function (index,value){
+  return (index === "is_insurance" && value === "是") ? "flex1" : "flex";
 }
 
 module.exports = {
   buttonClass: buttonClass,
+  isTextarea: isTextarea,
+  itemClass: itemClass,
+  isInput: isInput,
+  isEdit: isEdit,
+  isSelect: isSelect,
+  isHaveInsurance: isHaveInsurance,
+  isShowInsurance: isShowInsurance,
+  pickerClass: pickerClass
 }

@@ -1,82 +1,54 @@
 <!--pages/student_detail/student_detail.wxml-->
+<wxs src="./student_detail.wxs" module="filter"/>
+
 <view class='detail-main'>
-  <view class='student'>
-    <view class='box'>
+  <view class='{{filter.isEdit(isEdit)}}'>
+    <view class='room-title'>
       <view class='title'>
         <view class='left'>
           <view>
-            <text class='name'>{{detail.name}}</text>
+            <text class='name'>{{student_title.name}}</text>
           </view>
           <view>
-            <text class='sex'>{{detail.sex}}</text>
-            <text class='grade'>{{detail.grade}}级</text>
+            <text class='sex'>{{student_title.sex}}</text>
+            <text class='grade'>{{student_title.grade}}级</text>
           </view>
         </view>
         <view class='right'>
-          <button size='mini' class='{{tools.buttonClass(isEdit)}}'>编辑</button>
+          <button size='mini' class='{{filter.buttonClass(isEdit)}}' bindtap='editHandler'>编辑</button>
         </view>
       </view>
-      <view class='item'>
-        <text class='key'>学院</text>
-        <text class='value'>{{detail.college}}</text>
-      </view>
-      <view class='item'>
-        <text class='key'>学号</text>
-        <text class='value'>{{detail.id}}</text>
-      </view>
-      <view class='item'>
-        <text class='key'>专业</text>
-        <text class='value'>{{detail.major}}</text>
-      </view>
-      <view class='item'>
-        <text class='key'>班级</text>
-        <text class='value'>{{detail.classname}}</text>
+    </view>
+    <view class='box' wx:for="{{student}}" for-index="x">
+      <view class='{{filter.itemClass(index)}}' wx:for="{{item}}">
+        <text class='key' wx:if="{{!filter.isTextarea(index)}}">{{student_key_map[index]}}</text>
+        <view class='key_big' wx:if="{{filter.isTextarea(index)}}">{{student_key_map[index]}}</view>
+        <text class='value' wx:if="{{!filter.isTextarea(index)}}">{{item}}</text>
+        <input value='{{item}}' class='valueInput' wx:if="{{filter.isInput(index)}}"></input>
+        <picker value="{{selectIndex[index]}}" range="{{options[index]}}" wx:if="{{filter.isSelect(index)}}" class='{{filter.pickerClass(index,item)}}'>
+           {{options[index][selectIndex[index]]}}
+        </picker>
+        <input value='{{insurance_type}}' 
+        class='valueInput flex1' 
+        wx:if="{{filter.isHaveInsurance(index)}}" 
+        style='{{filter.isHaveInsurance(item)}}'
+        placeholder="请填写"></input> 
+        <textarea  wx:if="{{filter.isTextarea(index)}}" value='{{item}}' disabled='{{isEdit}}'></textarea>
       </view>
     </view>
-    <view class='box'>
-      <view class='item'>
-        <text class='key'>电话</text>
-        <text class='value'>{{detail.phonenumber}}</text>
-      </view>
-      <view class='item'>
-        <text class='key'>籍贯</text>
-        <text class='value'>{{detail.nativeplace}}</text>
-      </view>
-      <view class='item'>
-        <text class='key'>宿舍</text>
-        <text class='value'>{{detail.dormitory}}</text>
+    <view class='box historys'>
+      <view class='history_title'>修改记录</view>
+      <view wx:for="{{historys}}" class='history'>
+        <text class='time'>{{item.time}}</text>
+        <text class='main'>{{item.main}}</text>
       </view>
     </view>
-    <view class='box'>
-      <view class='item'>
-        <text class='key'>第一联系人</text>
-        <text class='value'>{{detail.firstconnecter}}</text>
+    <view class='box buttons' wx:if="{{isEdit}}">
+      <view class='btn-wrapper'>
+        <button class='saveBtn' size='mini'>保存</button>
       </view>
-      <view class='item'>
-        <text class='key'>联系人电话</text>
-        <text class='value'>{{detail.conneter_phone}}</text>
-      </view>
-    </view>
-
-    <view class='box'>
-      <view class='item'>
-        <text class='key'>辅导员</text>
-        <text class='value'>{{detail.counselor}}</text>
-      </view>
-      <view class='item'>
-        <text class='key'>辅导员工号</text>
-        <text class='value'>{{detail.counselor_id}}</text>
-      </view>
-    </view>
-
-    <view class='box'>
-      <view class='item'>
-        <text class='key'>是否为贫困生</text>
-        <text class='value'>{{detail.major}}</text>
-      </view>
-      <view class='item'>
-        <text class='key'>是否购买保险</text>
-        <text class='value'>{{detail.classname}}</text>
+      <view class='btn-wrapper'>
+        <button class='cansoleBtn' size='mini'>取消</button>
       </view>
     </view>
   </view>

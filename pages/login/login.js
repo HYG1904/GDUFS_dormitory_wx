@@ -79,6 +79,7 @@ Page({
           wx.setStorageSync('id', res.data.msg.id);
           wx.setStorageSync('name', res.data.msg.name);
           wx.setStorageSync('identify', res.data.msg.identify);
+          wx.setStorageSync('options', res.data.msg.college);
           // 记住账号
           if (that.data.isRememberUsername) wx.setStorageSync('username', that.data.username);
           // 记住密码

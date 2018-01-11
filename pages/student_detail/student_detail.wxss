@@ -3,12 +3,23 @@
   padding-left: 30rpx;
   padding-right: 30rpx;
   font-size: 48rpx;
+  background: #fff;
   color:#333;
-  margin-top: 50rpx;
-  margin-bottom: 2rpx;
+  padding-top: 1rpx;
+  padding-bottom: 2rpx;
 }
 .student{
   background: #EEEEEE;
+  overflow: auto;
+}
+.edit .value{
+  display: none
+}
+.normal .valueInput{
+  display: none
+}
+.normal picker{
+  display: none;
 }
 .box{
   padding-left: 30rpx;
@@ -17,7 +28,7 @@
   background: #fff;
   overflow: auto;
 }
-.box .title{
+.title{
   margin-top: 48rpx;
   margin-bottom: 15rpx;
 }
@@ -32,7 +43,7 @@
   font-size: 30rpx;
   color:#333;
 }
-.box .title button{
+.title button{
   color:#3080EE;
   font-size: 32rpx;
   width:240rpx;
@@ -41,33 +52,116 @@
   background: white;
   box-shadow: 0rpx 0rpx 18rpx 0rpx rgba(48,128,238,0.3);
 }
-.box .title .active{
+.title .active{
   background: #3080EE;
   color: #FFFFFF;
 }
-.box .title{
+.title{
   display: flex;
 }
-.box .title .right {
+.title .right {
   text-align: right;
   flex: 1;
 }
-.box .title .left {
+.title .left {
   flex: 1;
 }
 .box .item{
-  height: 86rpx;
   line-height: 86rpx;
   padding-top: 20rpx;
   border-bottom: 1rpx solid #EEEEEE;
   font-size: 28rpx;
   display: flex;
 }
+.box .column{
+   flex-direction: column;
+}
 .box .item .key{
   flex:1;
+}
+.box .item .key_big{
+  font-size: 36rpx;
+  color: #333;
+  height: 34rpx;
+  line-height: 34rpx;
+  margin-top: 40rpx; 
 }
 .box .item .value{
   flex:2;
   color:#3080EE;
   text-align: right;
+}
+.box .item .valueInput{
+  flex:2;
+   color:#999999; 
+  text-align: left;
+  height: 86rpx;
+  line-height: 86rpx;
+  
+}
+.box .item picker{
+  flex:2;
+   color:#999999; 
+  text-align: left;
+  height: 86rpx;
+  line-height: 86rpx;
+  
+}
+.box .item textarea{
+  height: 100rpx;
+  margin-bottom: 40rpx;
+  color: #999999;
+}
+.historys{
+  height: 480rpx;
+}
+.box .history_title{
+  font-size: 36rpx;
+  color: #333;
+  margin-top: 40rpx;
+  margin-bottom: 20rpx;
+}
+.history{
+  display: flex;
+  font-size: 26rpx;
+  color:#999999;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+.history .main{
+  flex: 1;
+  text-align: right;
+}
+.history .time{
+  flex: 1;
+  text-align: left;
+}
+.buttons{
+  padding-top: 30rpx;
+  padding-bottom: 55rpx;
+  margin-bottom: 0;
+  display: flex;
+}
+.buttons button{
+  font-size: 32rpx;
+  width:240rpx;
+  height: 80rpx;
+  margin-top: 15rpx;
+}
+.btn-wrapper{
+  flex: 1;
+  text-align: center
+}
+.saveBtn{
+  color: #fff;
+  background: #3080EE;
+}
+.cansoleBtn{
+  border: 1rpx solid #333;
+  color: #333;
+  background: #fff;
+}
+
+.box .item .flex1{
+  flex: 1;
 }
