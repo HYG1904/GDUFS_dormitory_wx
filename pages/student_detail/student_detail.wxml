@@ -19,21 +19,38 @@
         </view>
       </view>
     </view>
-    <view class='box' wx:for="{{student}}" for-index="x">
+    <view class='box' wx:for="{{student}}" wx:for-index="i">
       <view class='{{filter.itemClass(index)}}' wx:for="{{item}}">
         <text class='key' wx:if="{{!filter.isTextarea(index)}}">{{student_key_map[index]}}</text>
         <view class='key_big' wx:if="{{filter.isTextarea(index)}}">{{student_key_map[index]}}</view>
-        <text class='value' wx:if="{{!filter.isTextarea(index)}}">{{item}}</text>
-        <input value='{{item}}' class='valueInput' wx:if="{{filter.isInput(index)}}"></input>
-        <picker value="{{selectIndex[index]}}" range="{{options[index]}}" wx:if="{{filter.isSelect(index)}}" class='{{filter.pickerClass(index,item)}}'>
+        <text class='{{filter.valueClass(index,item)}}' wx:if="{{!filter.isTextarea(index)}}">{{item}}</text>
+        <input 
+        value='{{item}}' 
+        class='valueInput' 
+        wx:if="{{filter.isInput(index)}}" 
+        bindinput='inputHandler' 
+        data-key="{{index}}" 
+        data-index="{{i}}"
+        ></input>
+        <picker 
+        value="{{selectIndex[index]}}" 
+        range="{{options[index]}}" 
+        wx:if="{{filter.isSelect(index)}}" 
+        class='{{filter.pickerClass(index,item)}}'
+        data-key="{{index}}" 
+        data-index="{{i}}"
+        bindchange='pickerHandler'>
            {{options[index][selectIndex[index]]}}
         </picker>
-        <input value='{{insurance_type}}' 
+        <input 
+        value='{{insurance_type}}' 
         class='valueInput flex1' 
         wx:if="{{filter.isHaveInsurance(index)}}" 
-        style='{{filter.isHaveInsurance(item)}}'
-        placeholder="请填写"></input> 
-        <textarea  wx:if="{{filter.isTextarea(index)}}" value='{{item}}' disabled='{{isEdit}}'></textarea>
+        style='{{filter.isShowInsurance(item)}}'
+        placeholder="请填写"
+        bindinput='inputInsuranceHandler'></input>
+        <text class='value flex1' wx:if="{{filter.isHaveInsurance(index)}}" style='{{filter.isShowInsurance(item)}}'>({{insurance_type}})</text>
+        <textarea  wx:if="{{filter.isTextarea(index)}}" value='{{item}}' disabled='{{!isEdit}}'></textarea>
       </view>
     </view>
     <view class='box historys'>
@@ -45,13 +62,12 @@
     </view>
     <view class='box buttons' wx:if="{{isEdit}}">
       <view class='btn-wrapper'>
-        <button class='saveBtn' size='mini'>保存</button>
+        <button class='saveBtn' size='mini' bindtap='saveEditHandler'>保存</button>
       </view>
       <view class='btn-wrapper'>
-        <button class='cansoleBtn' size='mini'>取消</button>
+        <button class='cansoleBtn' size='mini' bindtap='cansoleEditHandler'>取消</button>
       </view>
     </view>
   </view>
-
   <view class='records'></view>
 </view>

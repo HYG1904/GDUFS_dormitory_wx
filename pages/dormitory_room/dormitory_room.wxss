@@ -9,6 +9,7 @@
 }
 .students{
   background: #EEEEEE;
+  overflow:auto;
 }
 .student{
   padding-left: 30rpx;
@@ -70,4 +71,30 @@
   flex:2;
   color:#3080EE;
   text-align: right;
+}
+.historys{
+  height: 480rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+.box .history_title{
+  font-size: 36rpx;
+  color: #333;
+  margin-top: 40rpx;
+  margin-bottom: 20rpx;
+}
+.history{
+  display: flex;
+  font-size: 26rpx;
+  color:#999999;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+.history .main{
+  flex: 1;
+  text-align: right;
+}
+.history .time{
+  flex: 1;
+  text-align: left;
 }

@@ -173,7 +173,8 @@ Page({
   onLoad: function (options) {
     // 读取参数
     this.setData({
-      buildingname: options.building
+      buildingname: options.building,
+      session_id: wx.getStorageSync("session_id")
     })
     // this.data.buildingname = options.building;
 
@@ -193,7 +194,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    this.setData({
+      session_id: wx.getStorageSync("session_id")
+    })
   },
 
   /**

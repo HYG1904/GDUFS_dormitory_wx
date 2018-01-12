@@ -1,8 +1,8 @@
 var buttonClass = function(ismanage){
-  return ismanage ? "active" : "";
+  return ismanage === "是" ? "active" : "";
 }
 var buttonText = function (ismanage) {
-  return ismanage ? "宿舍长" : "设为宿舍长";
+  return ismanage === "是" ? "宿舍长" : "设为宿舍长";
 }
 
 module.exports = {

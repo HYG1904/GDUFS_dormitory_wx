@@ -13,7 +13,7 @@
   </picker>
 </view>
 <view class='student-list'>
-  <navigator url="/pages/student_detail/student_detail" wx:for='{{studentData}}'>
+  <navigator url="/pages/student_detail/student_detail?student_number={{item.id}}" wx:for='{{studentData}}'>
     <view class='student'>
       <view class="left">
         <view class='name'>{{item.name}}</view>

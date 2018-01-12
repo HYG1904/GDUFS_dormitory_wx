@@ -1,12 +1,11 @@
 {
   "pages": [
-    "pages/dormitory_floor/dormitory_floor",
-    "pages/dormitory/dormitory",
     "pages/student/student",
-    "pages/login/login",
+    "pages/dormitory/dormitory",
+    "pages/dormitory_floor/dormitory_floor",
     "pages/student_detail/student_detail",
-    "pages/dormitory_buiding/dormitory_building",
-    
+    "pages/login/login",
+    "pages/dormitory_building/dormitory_building",
     "pages/dormitory_room/dormitory_room"
   ],
   "window": {
@@ -16,9 +15,10 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "color": "black",
+    "color": "#333",
     "selectedColor": "#3080EE",
     "backgroundColor": "#fff",
+    "borderStyle":"black",
     "list": [
       {
         "pagePath": "pages/student/student",

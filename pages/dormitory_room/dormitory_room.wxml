@@ -20,7 +20,7 @@
         <view class='right'>
           <button size='mini' 
           class='{{tools.buttonClass(item.is_dorm_manager)}}'
-          bindtap='changeManager
+          bindtap='changeManager'
           data-student_number="{{item.student_number}}">{{tools.buttonText(item.is_dorm_manager)}}</button>
         </view>
       </view>
@@ -46,5 +46,11 @@
       </view>
     </view>
   </view>
-  <view class='records'></view>
+  <view class='box historys'>
+    <view class='history_title'>修改记录</view>
+    <view wx:for="{{historys}}" class='history'>
+      <text class='time'>{{item.time}}</text>
+      <text class='main'>{{item.instructor}}</text>
+    </view>
+  </view>
 </view>
