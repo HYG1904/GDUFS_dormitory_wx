@@ -1,4 +1,10 @@
 /* pages/student/student.wxss */
+.logout{
+  color: #fff;
+  background: #B6B6B6;
+  float: right;
+  margin: 0rpx 10rpx auto auto;
+}
 .searchbox-wrapper{
   position: relative;
   width:90%; 

@@ -212,6 +212,47 @@ Page({
       }
     })
   },
+  logout: function () {
+    wx.showLoading({
+      mask: true,
+      title: '退出登录中',
+    })
+    var that = this;
+    wx.request({
+      method: "post",
+      url: that.data.url,
+      dataType: "json",
+      header: { 'content-type': "application/json" },
+      data: {
+        type: "A014",
+        session_id: that.data.session_id
+      },
+      success: function (res) {
+        wx.hideLoading()
+        try {
+          wx.setStorageSync('session_id', "");
+          wx.setStorageSync('id', "");
+          wx.setStorageSync('name', "");
+          wx.setStorageSync('identify', "");
+          wx.setStorageSync('options', "");
+        }catch(e){
+          console.log(e);
+        }
+        // 页面跳转
+        wx.redirectTo({
+          url: '/pages/login/login'
+        })
+      },
+      fail: function (res) {
+        wx.hideLoading()
+        wx.showModal({
+          title: '网络异常',
+          content: "请稍后重试"
+        })
+        console.log(res.errMsg);
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

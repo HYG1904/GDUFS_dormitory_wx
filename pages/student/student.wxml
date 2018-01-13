@@ -1,6 +1,8 @@
 <!--pages/student/student.wxml-->
 <wxs src="./student.wxs" module="computed" />
-
+<view style='height:60rpx;'>
+  <button size='mini'  bindtap='logout' class='logout'>退出登录</button>
+</view>
 <view class='searchbox-wrapper'>
   <image src='../../img/searchicon.png' mode="aspectFit" wx:if="{{computed.ifshowText(searchContent)}}"></image>
   <text wx:if="{{computed.ifshowText(searchContent)}}">搜索</text>

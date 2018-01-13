@@ -1,6 +1,7 @@
 <!--pages/dormitory/dormitory.wxml-->
 <view class="title">
  <text>南校宿舍信息总览</text>
+ <button size='mini'  bindtap='logout' class='logout'>退出登录</button>
 </view>
 <view class='main'>
   <view wx:for="{{building}}" wx:for-item='area' wx:for-index='key' wx:if="{{area.length>0}}">
