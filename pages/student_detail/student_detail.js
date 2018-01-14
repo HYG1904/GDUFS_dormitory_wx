@@ -273,6 +273,7 @@ Page({
               })
             }
           })
+          return;
         }
         // 没有权限
         if (res.data.code === 4) {
@@ -280,10 +281,14 @@ Page({
             title: '没有权限',
             content: "不好意思，您没有权限修改该同学信息",
           })
+          return;
         }
         // 请求出错
         if (res.data.code !== 1) {
-          console.log(res.data.msg);
+          wx.showModal({
+            title: '请求异常',
+            content: res.data.msg
+          })
           return;
         }
 
@@ -402,6 +407,7 @@ Page({
               })
             }
           })
+          return;
         }
         // 没有权限
         if (res.data.code === 4) {
@@ -412,10 +418,14 @@ Page({
               wx.navigateBack();
             }
           })
+          return;
         }
         // 请求出错
         if (res.data.code !== 1) {
-          console.log(res.data.msg);
+          wx.showModal({
+            title: '请求异常',
+            content: res.data.msg
+          })
           return;
         }
 

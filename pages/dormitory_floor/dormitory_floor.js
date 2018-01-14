@@ -46,11 +46,15 @@ Page({
               })
             }
           })
+          return;
         }
 
         // 请求出错
         if (res.data.code !== 1) {
-          console.log(res.data.msg);
+          wx.showModal({
+            title: '请求异常',
+            content: res.data.msg
+          })
           return;
         }
 
