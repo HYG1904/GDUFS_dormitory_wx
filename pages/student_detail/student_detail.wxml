@@ -31,6 +31,7 @@
         bindinput='inputHandler' 
         data-key="{{index}}" 
         data-index="{{i}}"
+        disabled='{{filter.isDisabled(index)}}'
         ></input>
         <picker 
         value="{{selectIndex[index]}}" 

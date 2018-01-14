@@ -1,17 +1,21 @@
+var isDisabled = function(index){
+  return index === "student_number" ? true : false;
+}
+
 var buttonClass = function (isEdit) {
   return isEdit ? "active" : "";
 }
 
 var isTextarea = function(index){
-  return (index === "note" || index === "dorm") ? true : false;
+  return (index === "note") ? true : false;
 }
 
 var itemClass = function (index){
-  return (index === "note" || index === "dorm") ? "item column" : "item";
+  return (index === "note") ? "item column" : "item";
 }
 
 var isInput = function(index){
-  return (index === "note" || index === "dorm" || index === "is_poor" || index === "is_insurance" || index === "college" || index === "major" || index === "classname") ? false : true;
+  return (index === "note" || index === "is_poor" || index === "is_insurance" || index === "college" || index === "major" || index === "classname") ? false : true;
 }
 
 var isSelect = function(index){
@@ -47,5 +51,6 @@ module.exports = {
   isHaveInsurance: isHaveInsurance,
   isShowInsurance: isShowInsurance,
   pickerClass: pickerClass,
-  valueClass: valueClass
+  valueClass: valueClass,
+  isDisabled: isDisabled
 }

@@ -40,7 +40,7 @@ Page({
       {
         phone: "",
         native_place: "",
-        room: "",
+        dorm: "",
       },
       // 第一联系人
       {
