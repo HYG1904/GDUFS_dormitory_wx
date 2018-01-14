@@ -58,9 +58,11 @@ Page({
         }
 
         var options = []
+        
         res.data.msg.all.forEach(function(item){
           options.push(item.college);
         })
+        options.reverse()
         // 请求成功
         that.setData({
           college: options
