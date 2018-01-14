@@ -130,7 +130,7 @@ Page({
 
         // 请求成功
         var students = that.data.studentData;
-        var currentPage = that.data.currentPage++;
+        var currentPage = that.data.currentPage+1;
         res.data.msg.forEach(function (item) {
           students.push(item);
         })
@@ -138,7 +138,6 @@ Page({
           studentData: students,
           currentPage: currentPage
         })
-
       },
       fail: function (res) {
         wx.hideLoading()
@@ -206,7 +205,7 @@ Page({
 
         // 请求成功
         var students = that.data.studentData;
-        var currentPage = that.data.currentPage++;
+        var currentPage = that.data.currentPage+1;
         res.data.msg.forEach(function(item){
           students.push(item);
         })
