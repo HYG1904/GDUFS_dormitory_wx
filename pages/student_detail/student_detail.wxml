@@ -23,7 +23,10 @@
       <view class='{{filter.itemClass(index)}}' wx:for="{{item}}">
         <text class='key' wx:if="{{!filter.isTextarea(index)}}">{{student_key_map[index]}}</text>
         <view class='key_big' wx:if="{{filter.isTextarea(index)}}">{{student_key_map[index]}}</view>
-        <text class='{{filter.valueClass(index,item)}}' wx:if="{{!filter.isTextarea(index)}}">{{item}}</text>
+        <navigator url="/pages/dormitory_room/dormitory_room?building={{building}}&room={{room_number}}" wx:if="{{filter.isHaveNavigator(index)}}">
+          <text class='{{filter.valueClass(index,item)}}' wx:if="{{!filter.isTextarea(index)}}">{{item}}</text>
+        </navigator>
+        <text class='{{filter.valueClass(index,item)}}' wx:if="{{!filter.isTextarea(index)&&!filter.isHaveNavigator(index)}}">{{item}}</text>
         <input 
         value='{{item}}' 
         class='valueInput' 

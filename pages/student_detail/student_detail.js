@@ -107,6 +107,8 @@ Page({
       //   "main": "总管理员"
       // }
     ],
+    building:"",
+    room_number:""
   },
   inputInsuranceHandler:function(e){
     this.setData({
@@ -443,14 +445,17 @@ Page({
         for (var key in student_title) {
           student_title[key] = studentSource[key];
         }
-
-        console.log(student);
         that.setData({
           student: student,
           historys: historys,
-          student_title: student_title
+          student_title: student_title,
+          building: studentSource.building,
+          room_number: studentSource.room_number,
         })
-
+        console.log(studentSource);
+        console.log(student);
+        console.log(that.data);
+        // console.log()
         that.initOptions();
       },
       fail: function (res) {

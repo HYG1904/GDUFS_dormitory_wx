@@ -41,6 +41,10 @@ var pickerClass = function (index,value){
 var valueClass = function(index,value){
   return (index === "is_insurance" && value === "是") ? "value flex1" : "value";
 }
+
+var isHaveNavigator = function(index){
+  return index==="dorm" ? true : false;
+}
 module.exports = {
   buttonClass: buttonClass,
   isTextarea: isTextarea,
@@ -52,5 +56,6 @@ module.exports = {
   isShowInsurance: isShowInsurance,
   pickerClass: pickerClass,
   valueClass: valueClass,
-  isDisabled: isDisabled
+  isDisabled: isDisabled,
+  isHaveNavigator: isHaveNavigator
 }

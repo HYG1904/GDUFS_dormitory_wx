@@ -10,7 +10,9 @@
       <view class='title'>
         <view class='left'>
           <view>
-            <text class='name'>{{item.name}}</text>
+            <navigator url="/pages/student_detail/student_detail?student_number={{item.student_number}}">
+              <text class='name'>{{item.name}}</text>
+            </navigator>
           </view>
           <view>
             <text class='sex'>{{item.sex}}</text>
