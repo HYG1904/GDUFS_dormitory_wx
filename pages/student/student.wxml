@@ -6,7 +6,7 @@
 <view class='searchbox-wrapper'>
   <image src='../../img/searchicon.png' mode="aspectFit" wx:if="{{computed.ifshowText(searchContent)}}"></image>
   <text wx:if="{{computed.ifshowText(searchContent)}}">搜索</text>
-  <input value='{{searchContent}}' bindinput='searchBoxInput'></input> 
+  <input value='{{searchContent}}' bindinput='searchBoxInput' bindconfirm="fetchData"></input> 
 </view>
 <view class='selector-wrapper'>
   <image src='../../img/downarrow.png'></image>

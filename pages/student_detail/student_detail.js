@@ -20,7 +20,7 @@ Page({
       first_contact: "第一联系人",
       first_contact_number: "联系人电话",
       instructor: "辅导员",
-      instructor_phone: "辅导员工号",
+      instructor_phone: "辅导员电话",
       is_poor: "是否为贫困生",
       is_insurance: "是否购买保险",
       note:"备注（辅导员填写）"
