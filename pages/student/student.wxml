@@ -6,11 +6,11 @@
 <view class='searchbox-wrapper'>
   <image src='../../img/searchicon.png' mode="aspectFit" wx:if="{{computed.ifshowText(searchContent)}}"></image>
   <text wx:if="{{computed.ifshowText(searchContent)}}">搜索</text>
-  <input value='{{searchContent}}' bindinput='searchBoxInput' bindconfirm="fetchData"></input> 
+  <input value='{{searchContent}}' bindinput='searchBoxInput' bindconfirm="finishInput"></input> 
 </view>
 <view class='selector-wrapper'>
   <image src='../../img/downarrow.png'></image>
-  <picker value="{{collegeindex}}" range="{{college}}" bindchange="fetchData">
+  <picker value="{{collegeindex}}" range="{{college}}" bindchange="changeCollege">
     <text>{{college[collegeindex]}}</text>
   </picker>
 </view>

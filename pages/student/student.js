@@ -149,21 +149,30 @@ Page({
       }
     })
   },
-  fetchData:function(e){
+  finishInput: function (e){
+    this.setData({
+      studentData: [],
+      currentPage: 0
+    })
+    this.fetchData();
+  },
+  changeCollege: function (e){
+    this.setData({
+      studentData: [],
+      currentPage: 0
+    })
+    this.setData({
+      collegeindex: e.detail.value
+    })
+    this.fetchData();
+  },
+  fetchData:function(){
     wx.showLoading({
       mask: true,
       title: '加载中',
     })
-    this.setData({
-      studentData:[],
-      currentPage: 0
-    })
     var that = this;
-    var college = that.data.college[e.detail.value]
-    this.setData({
-      collegeindex: e.detail.value
-    })
-    // console.log(college);
+    var college = that.data.college[that.data.collegeindex]
     wx.request({
       method: "post",
       url: that.data.url,
