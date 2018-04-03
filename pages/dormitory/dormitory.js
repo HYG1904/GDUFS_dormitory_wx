@@ -87,7 +87,7 @@ Page({
       "south":"南苑",
       "teacher":"师苑"
     },
-    url: "https://aoaotheone.cn/dormitory/index.php/Home/Wx/",
+    url: "https://gwsscx.com/dormitory/index.php/Home/Wx/",
     session_id:wx.getStorageSync("session_id")
   },
   fetchData:function(){

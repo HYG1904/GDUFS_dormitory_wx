@@ -10,7 +10,7 @@ Page({
     collegeindex:0,
     college: [],
     studentData:[],
-    url:"https://aoaotheone.cn/dormitory/index.php/Home/Wx/",
+    url:"https://gwsscx.com/dormitory/index.php/Home/Wx/",
     currentPage:0
   },
   searchBoxInput:function(e){

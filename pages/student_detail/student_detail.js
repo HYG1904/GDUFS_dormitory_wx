@@ -6,7 +6,7 @@ Page({
    */
   data: {
     session_id: wx.getStorageSync("session_id"),
-    url: "https://aoaotheone.cn/dormitory/index.php/Home/Wx/",
+    url: "https://gwsscx.com/dormitory/index.php/Home/Wx/",
     student_number:"",
     student_key_map:{
       college: "学院",

@@ -7,12 +7,12 @@ Page({
   data: {
     buildingname: "南苑13栋",
     session_id: wx.getStorageSync("session_id"),
-    url:"https://aoaotheone.cn/dormitory/index.php/Home/Wx/",
+    url: "https://gwsscx.com/dormitory/index.php/Home/Wx/",
     roomView: [],
-    floorinformation:[],
-    currentTab:"0"
+    floorinformation: [],
+    currentTab: "0"
   },
-  fetchData2:function(){
+  fetchData2: function () {
     var that = this;
     // wx.showLoading({
     //   mask: true,
@@ -26,7 +26,7 @@ Page({
       data: {
         session_id: that.data.session_id,
         type: "A008",
-        data:{
+        data: {
           building: that.data.buildingname
         }
       },
@@ -64,7 +64,7 @@ Page({
           floorinformation[index]['floor'] = index + 1;
         })
         that.setData({
-          floorinformation:floorinformation
+          floorinformation: floorinformation
         })
         console.log(that.data.building);
       },
@@ -78,7 +78,7 @@ Page({
       }
     })
   },
-  fetchData1:function(){
+  fetchData1: function () {
     var that = this;
     wx.showLoading({
       mask: true,
@@ -123,12 +123,12 @@ Page({
 
         // 请求成功
         var roomView = {};
-        for (var key in res.data.msg){
+        for (var key in res.data.msg) {
           roomView[key] = [];
-          res.data.msg[key].forEach(function(item,index){
+          res.data.msg[key].forEach(function (item, index) {
             roomView[key][index] = {};
             roomView[key][index]["bedcount"] = item['free_number'];
-            roomView[key][index]["room"] = item['room_number'];            
+            roomView[key][index]["room"] = item['room_number'];
           })
         }
 
@@ -147,7 +147,7 @@ Page({
       }
     })
   },
-  fetchDataStrategy: function (strategy){
+  fetchDataStrategy: function (strategy) {
     switch (strategy) {
       case 0:
         return this.fetchData1;
@@ -155,13 +155,13 @@ Page({
         return this.fetchData2;
     }
   },
-  changeTab:function(e){
+  changeTab: function (e) {
     var tab = e.target.dataset.index;
     this.setData({
-      currentTab:tab,
+      currentTab: tab,
     })
   },
-  showFloorDetail:function(e){
+  showFloorDetail: function (e) {
     var floor = e.currentTarget.dataset.floor;
     var buildingname = this.data.buildingname;
     console.log(floor);
@@ -169,7 +169,7 @@ Page({
       url: '/pages/dormitory_floor/dormitory_floor?building=' + buildingname + "&floor=" + floor
     })
   },
-  showDormitoryDetial:function(e){
+  showDormitoryDetial: function (e) {
     var building = this.data.buildingname;
     var room = e.detail.room;
     wx.navigateTo({
@@ -196,7 +196,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+
   },
 
   /**
@@ -212,34 +212,34 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+
   }
 })

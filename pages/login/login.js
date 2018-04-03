@@ -8,7 +8,7 @@ Page({
     username:"",
     password:"",
     session_id:"",
-    loginUrl:"https://aoaotheone.cn/dormitory/index.php/Home/Wx/",
+    loginUrl:"https://gwsscx.com/dormitory/index.php/Home/Wx/",
     isRememberPassword:false,
     isRememberUsername:false,
     users: wx.getStorageSync('users')
